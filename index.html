@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jarrel & Zarah — We're Getting Married!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Floating Sunflower Petals -->
+  <div class="petals-container" id="petalsContainer"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-brand">J &amp; Z</div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#couple">The Couple</a></li>
+      <li><a href="#story">Our Story</a></li>
+      <li><a href="#details">Details</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#weddaytimeline">Timeline</a></li>
+      <li><a href="#rsvp">RSVP</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <div class="sunflower-border sunflower-border-left"></div>
+    <div class="sunflower-border sunflower-border-right"></div>
+    <div class="hero-content">
+      <div class="hero-badge animate-on-scroll">Together Forever</div>
+      <h1 class="hero-title">
+        <span class="hero-name animate-on-scroll" data-delay="200">Jarrel</span>
+        <span class="hero-amp animate-on-scroll" data-delay="400">&amp;</span>
+        <span class="hero-name animate-on-scroll" data-delay="600">Zarah</span>
+      </h1>
+      <div class="hero-divider animate-on-scroll" data-delay="800">
+        <svg class="sunflower-icon" viewBox="0 0 100 100" width="60" height="60">
+          <g transform="translate(50,50)">
+            <g class="sunflower-petals-group">
+              <ellipse cx="0" cy="-22" rx="6" ry="14" fill="#DAA520" transform="rotate(0)"/>
+              <ellipse cx="0" cy="-22" rx="6" ry="14" fill="#E6B422" transform="rotate(30)"/>
+              <ellipse cx="0" cy="-22" rx="6" ry="14" fill="#DAA520" transform="rotate(60)"/>
+              <ellipse cx="0" cy="-22" rx="6" ry="14" fill="#E6B422" transform="rotate(90)"/>
+              <ellipse cx="0" cy="-22" rx="6" ry="14" fill="#DAA520" transform="rotate(120)"/>
+              <ellipse cx="0" cy="-22" rx="6" ry="14" fill="#E6B422" transform="rotate(150)"/>
+              <ellipse cx="0" cy="-22" rx="6" ry="14" fill="#DAA520" transform="rotate(180)"/>
+              <ellipse cx="0" cy="-22" rx="6" ry="14" fill="#E6B422" transform="rotate(210)"/>
+              <ellipse cx="0" cy="-22" rx="6" ry="14" fill="#DAA520" transform="rotate(240)"/>
+              <ellipse cx="0" cy="-22" rx="6" ry="14" fill="#E6B422" transform="rotate(270)"/>
+              <ellipse cx="0" cy="-22" rx="6" ry="14" fill="#DAA520" transform="rotate(300)"/>
+              <ellipse cx="0" cy="-22" rx="6" ry="14" fill="#E6B422" transform="rotate(330)"/>
+            </g>
+            <circle cx="0" cy="0" r="12" fill="#5D4037"/>
+            <circle cx="0" cy="0" r="9" fill="#4E342E"/>
+          </g>
+        </svg>
+      </div>
+      <p class="hero-date animate-on-scroll" data-delay="1000">May 14, 2026</p>
+      <p class="hero-venue animate-on-scroll" data-delay="1200">San Jose Manggagawa Parish, Montalban, Rizal</p>
+      <div class="hero-countdown animate-on-scroll" data-delay="1400" id="countdown">
+        <div class="countdown-item">
+          <span class="countdown-number" id="days">000</span>
+          <span class="countdown-label">Days</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="hours">00</span>
+          <span class="countdown-label">Hours</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="minutes">00</span>
+          <span class="countdown-label">Minutes</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="seconds">00</span>
+          <span class="countdown-label">Seconds</span>
+        </div>
+      </div>
+      <a href="#rsvp" class="hero-cta animate-on-scroll" data-delay="1600">You're Invited</a>
+    </div>
+    <div class="scroll-indicator">
+      <div class="mouse">
+        <div class="wheel"></div>
+      </div>
+      <span>Scroll Down</span>
+    </div>
+  </section>
+
+  <!-- Couple Section -->
+  <section class="section couple-section" id="couple">
+    <div class="section-sunflower-decor section-sunflower-left">
+      <svg viewBox="0 0 200 300" width="200" height="300" opacity="0.1">
+        <g transform="translate(100,100)">
+          <g><ellipse cx="0" cy="-35" rx="10" ry="22" fill="#DAA520" transform="rotate(0)"/><ellipse cx="0" cy="-35" rx="10" ry="22" fill="#DAA520" transform="rotate(30)"/><ellipse cx="0" cy="-35" rx="10" ry="22" fill="#DAA520" transform="rotate(60)"/><ellipse cx="0" cy="-35" rx="10" ry="22" fill="#DAA520" transform="rotate(90)"/><ellipse cx="0" cy="-35" rx="10" ry="22" fill="#DAA520" transform="rotate(120)"/><ellipse cx="0" cy="-35" rx="10" ry="22" fill="#DAA520" transform="rotate(150)"/><ellipse cx="0" cy="-35" rx="10" ry="22" fill="#DAA520" transform="rotate(180)"/><ellipse cx="0" cy="-35" rx="10" ry="22" fill="#DAA520" transform="rotate(210)"/><ellipse cx="0" cy="-35" rx="10" ry="22" fill="#DAA520" transform="rotate(240)"/><ellipse cx="0" cy="-35" rx="10" ry="22" fill="#DAA520" transform="rotate(270)"/><ellipse cx="0" cy="-35" rx="10" ry="22" fill="#DAA520" transform="rotate(300)"/><ellipse cx="0" cy="-35" rx="10" ry="22" fill="#DAA520" transform="rotate(330)"/></g>
+          <circle cx="0" cy="0" r="18" fill="#5D4037"/>
+        </g>
+        <rect x="96" y="120" width="8" height="140" rx="4" fill="#2E7D32" opacity="0.5"/>
+        <ellipse cx="80" cy="200" rx="25" ry="12" fill="#388E3C" opacity="0.4" transform="rotate(-20,80,200)"/>
+      </svg>
+    </div>
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-tag">Meet</span>
+        <h2 class="section-title">The Happy Couple</h2>
+        <div class="title-ornament">
+          <span></span>
+          <svg class="sunflower-small" viewBox="0 0 40 40" width="30" height="30">
+            <g transform="translate(20,20)"><g><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(0)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(30)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(60)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(90)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(120)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(150)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(180)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(210)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(240)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(270)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(300)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(330)"/></g><circle cx="0" cy="0" r="5" fill="#5D4037"/></g>
+          </svg>
+          <span></span>
+        </div>
+      </div>
+      <div class="couple-grid">
+        <div class="couple-card animate-on-scroll" data-delay="200">
+          <div class="couple-photo-frame">
+            <div class="couple-photo" style="background-image: url('images/DSC09607.jpg'); background-position: right 30% center;"></div>
+            <div class="photo-frame-corner tl"></div>
+            <div class="photo-frame-corner tr"></div>
+            <div class="photo-frame-corner bl"></div>
+            <div class="photo-frame-corner br"></div>
+          </div>
+          <h3 class="couple-name">The Groom</h3>
+          <p class="couple-role">His Promise</p>
+          <p class="couple-desc">A man of faith, kindness, and unwavering love. His smile lights up every room, and his heart beats for one person alone.</p>
+        </div>
+        <div class="couple-heart animate-on-scroll" data-delay="400">
+          <div class="heart-container">
+            <svg viewBox="0 0 100 100" width="80" height="80">
+              <path d="M50 88 C25 65, 0 50, 0 30 C0 12, 12 0, 28 0 C38 0, 47 6, 50 15 C53 6, 62 0, 72 0 C88 0, 100 12, 100 30 C100 50, 75 65, 50 88Z" fill="#DAA520"/>
+            </svg>
+          </div>
+        </div>
+        <div class="couple-card animate-on-scroll" data-delay="600">
+          <div class="couple-photo-frame">
+            <div class="couple-photo" style="background-image: url('images/DSC09526.jpg'); background-position: left 30% center;"></div>
+            <div class="photo-frame-corner tl"></div>
+            <div class="photo-frame-corner tr"></div>
+            <div class="photo-frame-corner bl"></div>
+            <div class="photo-frame-corner br"></div>
+          </div>
+          <h3 class="couple-name">The Bride</h3>
+          <p class="couple-role">Her Promise</p>
+          <p class="couple-desc">A woman of grace, beauty, and boundless compassion. Her laughter is contagious, and her love is the sunshine in Jarrel's life.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Photo -->
+  <section class="featured-photo-section">
+    <div class="featured-photo-wrapper animate-on-scroll">
+      <img src="images/DSC09432.jpg" alt="The Proposal - Sunflower Bouquet" style="object-position: center 42%;">
+      <div class="featured-photo-overlay">
+        <p class="featured-caption">"Every love story is beautiful, but ours is my favorite."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Love Story Timeline -->
+  <section class="section story-section" id="story">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-tag">Journey</span>
+        <h2 class="section-title">Our Love Story</h2>
+        <div class="title-ornament">
+          <span></span>
+          <svg class="sunflower-small" viewBox="0 0 40 40" width="30" height="30">
+            <g transform="translate(20,20)"><g><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(0)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(30)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(60)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(90)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(120)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(150)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(180)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(210)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(240)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(270)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(300)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(330)"/></g><circle cx="0" cy="0" r="5" fill="#5D4037"/></g>
+          </svg>
+          <span></span>
+        </div>
+      </div>
+      <div class="timeline">
+        <div class="timeline-line"></div>
+        <div class="timeline-item animate-on-scroll" data-delay="200">
+          <div class="timeline-dot">
+            <svg viewBox="0 0 40 40" width="28" height="28"><g transform="translate(20,20)"><g><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(0)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(60)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(120)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(180)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(240)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(300)"/></g><circle cx="0" cy="0" r="5" fill="#5D4037"/></g></svg>
+          </div>
+          <div class="timeline-content">
+            <span class="timeline-date">June 2019</span>
+            <h3>First Meeting</h3>
+            <p>A chance encounter at a friend's birthday celebration. Eyes met across the room, and the world stood still for just a moment.</p>
+          </div>
+        </div>
+        <div class="timeline-item animate-on-scroll" data-delay="400">
+          <div class="timeline-dot">
+            <svg viewBox="0 0 40 40" width="28" height="28"><g transform="translate(20,20)"><g><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(0)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(60)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(120)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(180)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(240)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(300)"/></g><circle cx="0" cy="0" r="5" fill="#5D4037"/></g></svg>
+          </div>
+          <div class="timeline-content">
+            <span class="timeline-date">September 2019</span>
+            <h3>First Date</h3>
+            <p>Coffee turned into dinner, and dinner turned into hours of conversation. That day, both of them knew — this was something special.</p>
+          </div>
+        </div>
+        <div class="timeline-item animate-on-scroll" data-delay="600">
+          <div class="timeline-dot">
+            <svg viewBox="0 0 40 40" width="28" height="28"><g transform="translate(20,20)"><g><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(0)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(60)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(120)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(180)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(240)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(300)"/></g><circle cx="0" cy="0" r="5" fill="#5D4037"/></g></svg>
+          </div>
+          <div class="timeline-content">
+            <span class="timeline-date">February 2021</span>
+            <h3>Said "I Love You"</h3>
+            <p>Under a sky full of stars, those three magical words were spoken for the first time. A moment sealed forever in their hearts.</p>
+          </div>
+        </div>
+        <div class="timeline-item animate-on-scroll" data-delay="800">
+          <div class="timeline-dot">
+            <svg viewBox="0 0 40 40" width="28" height="28"><g transform="translate(20,20)"><g><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(0)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(60)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(120)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(180)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(240)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(300)"/></g><circle cx="0" cy="0" r="5" fill="#5D4037"/></g></svg>
+          </div>
+          <div class="timeline-content">
+            <span class="timeline-date">March 2026</span>
+            <h3>The Proposal</h3>
+            <p>In a garden full of sunflowers — their flower — Jarrel got down on one knee. Through happy tears, Zarah whispered "Yes, forever yes."</p>
+          </div>
+        </div>
+        <div class="timeline-item animate-on-scroll" data-delay="1000">
+          <div class="timeline-dot">
+            <svg viewBox="0 0 40 40" width="28" height="28"><g transform="translate(20,20)"><g><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#FFC107" transform="rotate(0)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#FFC107" transform="rotate(60)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#FFC107" transform="rotate(120)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#FFC107" transform="rotate(180)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#FFC107" transform="rotate(240)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#FFC107" transform="rotate(300)"/></g><circle cx="0" cy="0" r="5" fill="#5D4037"/></g></svg>
+          </div>
+          <div class="timeline-content">
+            <span class="timeline-date">May 14, 2026</span>
+            <h3>The Wedding</h3>
+            <p>Two hearts, one journey. Surrounded by family and friends, they will say "I do" and begin their forever together.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Section -->
+  <section class="quote-section">
+    <div class="quote-overlay"></div>
+    <div class="container">
+      <blockquote class="quote animate-on-scroll">
+        <svg class="quote-mark" viewBox="0 0 50 50" width="50" height="50" fill="#DAA520" opacity="0.5">
+          <path d="M10 25 C10 15, 15 10, 22 10 L22 18 C18 18, 16 20, 16 25 L22 25 L22 40 L10 40 Z M28 25 C28 15, 33 10, 40 10 L40 18 C36 18, 34 20, 34 25 L40 25 L40 40 L28 40 Z"/>
+        </svg>
+        <p>"I have found the one whom my soul loves."</p>
+        <cite>— Song of Solomon 3:4</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Second Featured Photo Strip -->
+  <section class="featured-photo-section">
+    <div class="featured-photo-wrapper animate-on-scroll">
+      <img src="images/DSC09625.jpg" alt="Together in Love" style="object-position: center 25%;">
+      <div class="featured-photo-overlay">
+        <p class="featured-caption">"In all the world, there is no heart for me like yours."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Event Details -->
+  <section class="section details-section" id="details">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-tag">Celebrate</span>
+        <h2 class="section-title">Wedding Details</h2>
+        <div class="title-ornament">
+          <span></span>
+          <svg class="sunflower-small" viewBox="0 0 40 40" width="30" height="30">
+            <g transform="translate(20,20)"><g><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(0)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(30)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(60)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(90)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(120)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(150)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(180)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(210)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(240)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(270)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(300)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(330)"/></g><circle cx="0" cy="0" r="5" fill="#5D4037"/></g>
+          </svg>
+          <span></span>
+        </div>
+      </div>
+      <div class="details-grid">
+        <div class="detail-card animate-on-scroll" data-delay="200">
+          <div class="detail-icon">
+            <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="#DAA520" stroke-width="1.5">
+              <path d="M18 2l-2 4h-4l-2-4M12 6v16M4 10c0-1 1-2 2-2h12c1 0 2 1 2 2v0c0 4-3.5 8-8 10C7.5 18 4 14 4 10z"/>
+            </svg>
+          </div>
+          <h3>The Ceremony</h3>
+          <p class="detail-time">2:00 PM</p>
+          <p class="detail-venue">San Jose Manggagawa Parish</p>
+          <p class="detail-address">Montalban, Rizal</p>
+          <a href="https://maps.google.com/?q=San+Jose+Manggagawa+Parish+Montalban+Rizal" target="_blank" class="detail-map-link">View on Map →</a>
+        </div>
+        <div class="detail-card animate-on-scroll" data-delay="400">
+          <div class="detail-icon">
+            <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="#DAA520" stroke-width="1.5">
+              <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+          </div>
+          <h3>The Reception</h3>
+          <p class="detail-time">4:00 PM</p>
+          <p class="detail-venue">Costa Abril Resort</p>
+          <p class="detail-address-sub">The Grand Ballroom</p>
+          <p class="detail-address">49 Dao St, Rodriguez, Rizal</p>
+          <a href="https://maps.google.com/?q=Costa+Abril+Resort+49+Dao+St+Rodriguez+Rizal" target="_blank" class="detail-map-link">View on Map →</a>
+        </div>
+        <div class="detail-card animate-on-scroll" data-delay="600">
+          <div class="detail-icon">
+            <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="#DAA520" stroke-width="1.5">
+              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/>
+            </svg>
+          </div>
+          <h3>Dress Code</h3>
+          <p class="detail-venue" style="margin-top:8px; margin-bottom:4px;">Color Motif</p>
+          <div class="dress-code-colors" style="margin-bottom:16px;">
+            <span class="color-swatch" style="background:#ffde59" title="Yellow"></span>
+            <span class="color-swatch" style="background:#ffff8f" title="Light Yellow"></span>
+            <span class="color-swatch" style="background:#000000" title="Black"></span>
+          </div>
+          <div class="dress-code-details">
+            <div class="dress-group">
+              <p class="dress-label">Principal Sponsors</p>
+              <p class="dress-info">Formal Attire</p>
+            </div>
+            <div class="dress-group">
+              <p class="dress-label">Ninong/s</p>
+              <p class="dress-info">Black Tuxedo / Black Coat</p>
+            </div>
+            <div class="dress-group">
+              <p class="dress-label">Ninang/s</p>
+              <p class="dress-info">Long Gown/Dress (Any Shades of Yellow)</p>
+            </div>
+            <div class="dress-divider"></div>
+            <div class="dress-group">
+              <p class="dress-label">Male Guests</p>
+              <p class="dress-info">Long Sleeves / Polo / Coat</p>
+            </div>
+            <div class="dress-group">
+              <p class="dress-label">Female Guests</p>
+              <p class="dress-info">Gown/Dress (Any Shades of Yellow)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="section gallery-section" id="gallery">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-tag">Memories</span>
+        <h2 class="section-title">Our Gallery</h2>
+        <div class="title-ornament">
+          <span></span>
+          <svg class="sunflower-small" viewBox="0 0 40 40" width="30" height="30">
+            <g transform="translate(20,20)"><g><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(0)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(30)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(60)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(90)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(120)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(150)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(180)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(210)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(240)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(270)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(300)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(330)"/></g><circle cx="0" cy="0" r="5" fill="#5D4037"/></g>
+          </svg>
+          <span></span>
+        </div>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item gallery-item-tall animate-on-scroll" data-delay="100">
+          <img src="images/DSC09452.jpg" alt="Together with Sunflowers" loading="lazy">
+          <div class="gallery-overlay"><span>Forever Yours</span></div>
+        </div>
+        <div class="gallery-item animate-on-scroll" data-delay="200">
+          <img src="images/DSC09408.jpg" alt="Whispered Promises" loading="lazy">
+          <div class="gallery-overlay"><span>Sweet Nothings</span></div>
+        </div>
+        <div class="gallery-item animate-on-scroll" data-delay="300">
+          <img src="images/DSC09419.jpg" alt="Hand in Hand" loading="lazy">
+          <div class="gallery-overlay"><span>Hand in Hand</span></div>
+        </div>
+        <div class="gallery-item gallery-item-wide animate-on-scroll" data-delay="400">
+          <img src="images/DSC09740.jpg" alt="Sunflower Petals" loading="lazy">
+          <div class="gallery-overlay"><span>Our Sunflower Love</span></div>
+        </div>
+        <div class="gallery-item animate-on-scroll" data-delay="500">
+          <img src="images/DSC09522.jpg" alt="The Embrace" loading="lazy">
+          <div class="gallery-overlay"><span>The Embrace</span></div>
+        </div>
+        <div class="gallery-item gallery-item-tall animate-on-scroll" data-delay="600">
+          <img src="images/DSC09520.jpg" alt="In White" loading="lazy">
+          <div class="gallery-overlay"><span>Meant To Be</span></div>
+        </div>
+        <div class="gallery-item animate-on-scroll" data-delay="700">
+          <img src="images/DSC09395.jpg" alt="First Look" loading="lazy">
+          <div class="gallery-overlay"><span>The Beginning</span></div>
+        </div>
+        <div class="gallery-item animate-on-scroll" data-delay="800">
+          <img src="images/DSC09625.jpg" alt="Together" loading="lazy">
+          <div class="gallery-overlay"><span>Always &amp; Forever</span></div>
+        </div>
+        <div class="gallery-item gallery-item-wide animate-on-scroll" data-delay="900">
+          <img src="images/DSC09432.jpg" alt="The Proposal" loading="lazy">
+          <div class="gallery-overlay"><span>Will You Marry Me?</span></div>
+        </div>
+        <div class="gallery-item animate-on-scroll" data-delay="1000">
+          <img src="images/DSC09751.jpg" alt="Together Forever" loading="lazy">
+          <div class="gallery-overlay"><span>Together Forever</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wedding Day Timeline -->
+  <section class="section wedding-timeline-section" id="weddaytimeline">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-tag">The</span>
+        <h2 class="section-title">Wedding Timeline</h2>
+        <div class="title-ornament">
+          <span></span>
+          <svg class="sunflower-small" viewBox="0 0 40 40" width="30" height="30">
+            <g transform="translate(20,20)"><g><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(0)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(30)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(60)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(90)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(120)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(150)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(180)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(210)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(240)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(270)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(300)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(330)"/></g><circle cx="0" cy="0" r="5" fill="#5D4037"/></g>
+          </svg>
+          <span></span>
+        </div>
+      </div>
+      <div class="wed-timeline">
+        <div class="wed-timeline-item animate-on-scroll" data-delay="100">
+          <div class="wed-timeline-icon">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#DAA520" stroke-width="1.5"><path d="M12 2C8 2 4 5 4 9c0 5 8 13 8 13s8-8 8-13c0-4-4-7-8-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          </div>
+          <div class="wed-timeline-info">
+            <span class="wed-timeline-time">02:00 PM</span>
+            <h4>Gathering at Church</h4>
+          </div>
+        </div>
+        <div class="wed-timeline-item animate-on-scroll" data-delay="200">
+          <div class="wed-timeline-icon">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#DAA520" stroke-width="1.5"><circle cx="9" cy="12" r="4"/><circle cx="15" cy="12" r="4"/></svg>
+          </div>
+          <div class="wed-timeline-info">
+            <span class="wed-timeline-time">03:00 PM</span>
+            <h4>Wedding Ceremony</h4>
+          </div>
+        </div>
+        <div class="wed-timeline-item animate-on-scroll" data-delay="300">
+          <div class="wed-timeline-icon">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#DAA520" stroke-width="1.5"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"/><path d="M8 14l2 2 4-4"/></svg>
+          </div>
+          <div class="wed-timeline-info">
+            <span class="wed-timeline-time">04:30 PM</span>
+            <h4>Cocktail Hour / Pica Pica</h4>
+          </div>
+        </div>
+        <div class="wed-timeline-item animate-on-scroll" data-delay="400">
+          <div class="wed-timeline-icon">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#DAA520" stroke-width="1.5"><path d="M12 2a4 4 0 014 4v2H8V6a4 4 0 014-4z"/><path d="M6 8h12l-1 12H7L6 8z"/><path d="M10 12v4M14 12v4"/><path d="M9 2c0 0 1.5 1 3 1s3-1 3-1"/></svg>
+          </div>
+          <div class="wed-timeline-info">
+            <span class="wed-timeline-time">05:00 PM</span>
+            <h4>Wedding Program</h4>
+          </div>
+        </div>
+        <div class="wed-timeline-item animate-on-scroll" data-delay="500">
+          <div class="wed-timeline-icon">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#DAA520" stroke-width="1.5"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+          </div>
+          <div class="wed-timeline-info">
+            <span class="wed-timeline-time">05:30 PM</span>
+            <h4>First Dance</h4>
+          </div>
+        </div>
+        <div class="wed-timeline-item animate-on-scroll" data-delay="600">
+          <div class="wed-timeline-icon">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#DAA520" stroke-width="1.5"><path d="M3 11h2l2-4 3 8 3-6 2 4h6"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></svg>
+          </div>
+          <div class="wed-timeline-info">
+            <span class="wed-timeline-time">06:00 PM</span>
+            <h4>Dinner Time</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Notice on Gifts -->
+  <section class="section gifts-section">
+    <div class="container">
+      <div class="gifts-card animate-on-scroll">
+        <div class="gifts-icon">
+          <svg viewBox="0 0 24 24" width="56" height="56" fill="none" stroke="#DAA520" stroke-width="1.5">
+            <path d="M20 12v10H4V12"/><path d="M2 7h20v5H2z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/>
+          </svg>
+        </div>
+        <h3 class="gifts-title">A Notice on Gifts</h3>
+        <p class="gifts-text">Your presence on our wedding is enough. However, if you wish to give us something, monetary gift will be greatly appreciated.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RSVP / Invitation Section -->
+  <section class="section rsvp-section" id="rsvp">
+    <div class="rsvp-bg-decor"></div>
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-tag">Respond</span>
+        <h2 class="section-title">You're Cordially Invited</h2>
+        <div class="title-ornament">
+          <span></span>
+          <svg class="sunflower-small" viewBox="0 0 40 40" width="30" height="30">
+            <g transform="translate(20,20)"><g><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(0)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(30)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(60)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(90)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(120)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(150)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(180)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(210)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(240)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(270)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(300)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(330)"/></g><circle cx="0" cy="0" r="5" fill="#5D4037"/></g>
+          </svg>
+          <span></span>
+        </div>
+        <p class="section-subtitle">We would be honored to have you celebrate this special day with us.<br>Kindly let us know if you can attend.</p>
+        <div class="rsvp-notice-box animate-on-scroll" data-delay="100">
+          <p class="rsvp-reserved">We have reserved <strong>____</strong> seat/s for you.</p>
+          <p class="rsvp-deadline">We request the favor of your response on or before <strong>April 30, 2026</strong>.</p>
+          <p class="rsvp-contact">Kindly send us a message at <strong>+639330569521</strong> or at our <strong>Facebook Messenger</strong>.</p>
+        </div>
+        <div class="rsvp-adult-notice animate-on-scroll" data-delay="200">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#DAA520" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <p>While children are a bundle of joy, we respectfully inform you that <strong>this is an adult-only event</strong>. Thank you!</p>
+        </div>
+      </div>
+
+      <div class="invitation-card animate-on-scroll" data-delay="200">
+        <div class="invitation-inner">
+          <div class="invitation-corner inv-tl"></div>
+          <div class="invitation-corner inv-tr"></div>
+          <div class="invitation-corner inv-bl"></div>
+          <div class="invitation-corner inv-br"></div>
+
+          <div class="invitation-header">
+            <p class="inv-together">Together with their families</p>
+            <h2 class="inv-names">Jarrel &amp; Zarah</h2>
+            <p class="inv-request">Request the honor of your presence at the celebration of their marriage</p>
+          </div>
+
+          <div class="invitation-details">
+            <div class="inv-detail">
+              <span class="inv-label">Date</span>
+              <span class="inv-value">Thursday, May 14, 2026</span>
+            </div>
+            <div class="inv-detail">
+              <span class="inv-label">Ceremony</span>
+              <span class="inv-value">2:00 in the Afternoon</span>
+            </div>
+            <div class="inv-detail">
+              <span class="inv-label">Venue</span>
+              <span class="inv-value">San Jose Manggagawa Parish, Montalban, Rizal</span>
+            </div>
+            <div class="inv-detail">
+              <span class="inv-label">Reception</span>
+              <span class="inv-value">Costa Abril Resort, The Grand Ballroom<br>49 Dao St, Rodriguez, Rizal</span>
+            </div>
+          </div>
+
+          <div class="sunflower-row">
+            <svg viewBox="0 0 40 40" width="24" height="24"><g transform="translate(20,20)"><g><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(0)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(60)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(120)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(180)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(240)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(300)"/></g><circle cx="0" cy="0" r="5" fill="#5D4037"/></g></svg>
+            <svg viewBox="0 0 40 40" width="18" height="18"><g transform="translate(20,20)"><g><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(15)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(75)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(135)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(195)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(255)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(315)"/></g><circle cx="0" cy="0" r="5" fill="#5D4037"/></g></svg>
+            <svg viewBox="0 0 40 40" width="24" height="24"><g transform="translate(20,20)"><g><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(0)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(60)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(120)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(180)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(240)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(300)"/></g><circle cx="0" cy="0" r="5" fill="#5D4037"/></g></svg>
+          </div>
+        </div>
+      </div>
+
+      <form class="rsvp-form animate-on-scroll" data-delay="400" id="rsvpForm">
+        <h3 class="rsvp-form-title">Kindly Respond</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="guestName">Full Name</label>
+            <input type="text" id="guestName" name="guestName" placeholder="Your full name" required>
+          </div>
+          <div class="form-group">
+            <label for="guestEmail">Email Address</label>
+            <input type="email" id="guestEmail" name="guestEmail" placeholder="your@email.com" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="attendance">Will you attend?</label>
+            <select id="attendance" name="attendance" required>
+              <option value="">Select your response</option>
+              <option value="yes">Joyfully Accepts</option>
+              <option value="no">Regretfully Declines</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="guests">Number of Guests</label>
+            <select id="guests" name="guests">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group full-width">
+          <label for="message">Message for the Couple</label>
+          <textarea id="message" name="message" rows="4" placeholder="Share your love and wishes..."></textarea>
+        </div>
+        <button type="submit" class="rsvp-btn">
+          <span>Send RSVP</span>
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+        </button>
+      </form>
+
+      <div class="rsvp-success" id="rsvpSuccess">
+        <div class="success-content">
+          <svg viewBox="0 0 100 100" width="80" height="80">
+            <g transform="translate(50,50)">
+              <g class="sunflower-petals-group"><ellipse cx="0" cy="-22" rx="6" ry="14" fill="#DAA520" transform="rotate(0)"/><ellipse cx="0" cy="-22" rx="6" ry="14" fill="#E6B422" transform="rotate(30)"/><ellipse cx="0" cy="-22" rx="6" ry="14" fill="#DAA520" transform="rotate(60)"/><ellipse cx="0" cy="-22" rx="6" ry="14" fill="#E6B422" transform="rotate(90)"/><ellipse cx="0" cy="-22" rx="6" ry="14" fill="#DAA520" transform="rotate(120)"/><ellipse cx="0" cy="-22" rx="6" ry="14" fill="#E6B422" transform="rotate(150)"/><ellipse cx="0" cy="-22" rx="6" ry="14" fill="#DAA520" transform="rotate(180)"/><ellipse cx="0" cy="-22" rx="6" ry="14" fill="#E6B422" transform="rotate(210)"/><ellipse cx="0" cy="-22" rx="6" ry="14" fill="#DAA520" transform="rotate(240)"/><ellipse cx="0" cy="-22" rx="6" ry="14" fill="#E6B422" transform="rotate(270)"/><ellipse cx="0" cy="-22" rx="6" ry="14" fill="#DAA520" transform="rotate(300)"/><ellipse cx="0" cy="-22" rx="6" ry="14" fill="#E6B422" transform="rotate(330)"/></g>
+              <circle cx="0" cy="0" r="15" fill="#5D4037"/>
+              <path d="M-6 0 L-2 5 L8 -5" stroke="#FFC107" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+          </svg>
+          <h3>Thank You!</h3>
+          <p>Your RSVP has been received. We can't wait to celebrate with you!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-sunflowers">
+        <svg viewBox="0 0 40 40" width="30" height="30"><g transform="translate(20,20)"><g><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(0)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(30)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(60)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(90)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(120)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(150)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(180)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(210)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(240)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(270)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(300)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(330)"/></g><circle cx="0" cy="0" r="5" fill="#5D4037"/></g></svg>
+        <svg viewBox="0 0 40 40" width="22" height="22"><g transform="translate(20,20)"><g><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(15)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(75)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(135)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(195)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(255)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#E6B422" transform="rotate(315)"/></g><circle cx="0" cy="0" r="5" fill="#5D4037"/></g></svg>
+        <svg viewBox="0 0 40 40" width="30" height="30"><g transform="translate(20,20)"><g><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(0)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(30)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(60)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(90)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(120)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(150)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(180)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(210)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(240)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(270)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(300)"/><ellipse cx="0" cy="-9" rx="2.5" ry="6" fill="#DAA520" transform="rotate(330)"/></g><circle cx="0" cy="0" r="5" fill="#5D4037"/></g></svg>
+      </div>
+      <h2 class="footer-names">Jarrel &amp; Zarah</h2>
+      <p class="footer-date">May 14, 2026</p>
+      <p class="footer-hashtag">#JarrelandZarah2026</p>
+      <p class="footer-copy">Made with love, for love.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
