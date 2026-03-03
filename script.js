@@ -27,7 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function spawnPetals() {
-    for (let i = 0; i < 3; i++) {
+    const count = window.innerWidth < 768 ? 1 : 3;
+    for (let i = 0; i < count; i++) {
       createPetal();
     }
   }
@@ -123,13 +124,21 @@ document.addEventListener('DOMContentLoaded', () => {
     rootMargin: '0px 0px -50px 0px'
   };
 
+  let galleryRevealIndex = 0;
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        const delay = entry.target.dataset.delay || 0;
+        let delay = parseInt(entry.target.dataset.delay || '0', 10);
+
+        if (entry.target.classList.contains('gallery-item')) {
+          delay += galleryRevealIndex * 120;
+          galleryRevealIndex += 1;
+        }
+
         setTimeout(() => {
           entry.target.classList.add('visible');
-        }, parseInt(delay));
+        }, delay);
         observer.unobserve(entry.target);
       }
     });
