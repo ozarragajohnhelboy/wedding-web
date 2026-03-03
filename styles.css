@@ -196,6 +196,8 @@ a {
   border: none;
   cursor: pointer;
   padding: 5px;
+  position: relative;
+  z-index: 1100;
 }
 
 .nav-toggle span {
@@ -233,9 +235,9 @@ a {
 
 .sunflower-border {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 120px;
+  left: 0;
+  right: 0;
+  height: 80px;
   background: repeating-linear-gradient(
     180deg,
     transparent,
@@ -246,8 +248,13 @@ a {
   z-index: 1;
 }
 
-.sunflower-border-left { left: 0; }
-.sunflower-border-right { right: 0; }
+.sunflower-border-left {
+  top: 0;
+}
+
+.sunflower-border-right {
+  top: 80px;
+}
 
 .hero-content {
   position: relative;
@@ -257,7 +264,7 @@ a {
 }
 
 .hero-badge {
-  display: inline-block;
+  display: block;
   font-family: var(--font-sans);
   font-size: 0.75rem;
   font-weight: 600;
@@ -266,7 +273,7 @@ a {
   color: var(--sunflower);
   border: 1px solid rgba(218, 165, 32, 0.5);
   padding: 8px 24px;
-  margin-bottom: 24px;
+  margin: 0 auto 8px;
 }
 
 .hero-title {
@@ -1599,6 +1606,7 @@ a {
     gap: 24px;
     transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
   }
 
   .nav-links.open {

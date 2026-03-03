@@ -260,25 +260,30 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', highlightNav, { passive: true });
 
   // ============================================
-  // TYPED TEXT EFFECT FOR HERO BADGE
+  // TYPED TEXT EFFECT FOR HERO BADGES (both)
   // ============================================
-  const badge = document.querySelector('.hero-badge');
-  if (badge) {
-    const text = badge.textContent;
-    badge.textContent = '';
-    badge.style.opacity = '1';
-    badge.style.transform = 'translateY(0)';
+  const badges = document.querySelectorAll('.hero-badge');
+  if (badges.length) {
+    badges.forEach((badgeEl, index) => {
+      const text = badgeEl.textContent;
+      badgeEl.textContent = '';
+      badgeEl.style.opacity = '1';
+      badgeEl.style.transform = 'translateY(0)';
 
-    let i = 0;
-    function typeChar() {
-      if (i < text.length) {
-        badge.textContent += text[i];
-        i++;
-        setTimeout(typeChar, 80);
+      let i = 0;
+      const baseDelay = 600;         
+      const betweenDelay = 200;        
+
+      function typeChar() {
+        if (i < text.length) {
+          badgeEl.textContent += text[i];
+          i++;
+          setTimeout(typeChar, 80);
+        }
       }
-    }
 
-    setTimeout(typeChar, 800);
+      setTimeout(typeChar, baseDelay + index * betweenDelay);
+    });
   }
 
   // ============================================
