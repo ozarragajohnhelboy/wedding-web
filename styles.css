@@ -781,7 +781,14 @@ a {
   padding: 100px 0;
   background:
     linear-gradient(135deg, rgba(62, 39, 35, 0.85), rgba(93, 64, 55, 0.85)),
-    url('images/DSC09740.jpg') center/cover no-repeat;
+    url('images/DSC09740.jpg') center 55% / cover no-repeat;
+}
+
+/* Parallax effect on desktop only (mobile stays static to avoid lag) */
+@media (min-width: 769px) {
+  .quote-section {
+    background-attachment: fixed;
+  }
 }
 
 .quote {
