@@ -1,6 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // ============================================
+  // EMAILJS CONFIG (fill these from your EmailJS dashboard)
+  // ============================================
+  const EMAILJS_SERVICE_ID = 'service_kujjr5m';
+  const EMAILJS_TEMPLATE_ID = 'template_u3diugf';       // palitan sa actual template ID mo
+  const EMAILJS_PUBLIC_KEY = '2vkwsB75zAf1Az-m1E'; // palitan sa EmailJS public key mo
+
+  if (window.emailjs && EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY_HERE') {
+    emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+  }
+
+  // ============================================
   // FLOATING SUNFLOWER PETALS
   // ============================================
   const petalsContainer = document.getElementById('petalsContainer');
@@ -161,11 +172,36 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.innerHTML = '<span>Sending...</span>';
     btn.disabled = true;
 
-    setTimeout(() => {
-      rsvpForm.style.display = 'none';
-      rsvpSuccess.classList.add('show');
-      launchCelebration();
-    }, 1500);
+    const formData = new FormData(rsvpForm);
+    const templateParams = {
+      guest_name: formData.get('guestName'),
+      email: formData.get('guestEmail'),
+      attendance: formData.get('attendance'),
+      guests: formData.get('guests'),
+      message: formData.get('message') || '',
+    };
+
+    if (window.emailjs && EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY_HERE') {
+      emailjs
+        .send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+        .then(() => {
+          rsvpForm.style.display = 'none';
+          rsvpSuccess.classList.add('show');
+          launchCelebration();
+        })
+        .catch(() => {
+          btn.innerHTML = '<span>Send RSVP</span>';
+          btn.disabled = false;
+          alert('Sorry, something went wrong sending your RSVP. Please try again.');
+        });
+    } else {
+      // fallback: walang configured EmailJS, behave like demo
+      setTimeout(() => {
+        rsvpForm.style.display = 'none';
+        rsvpSuccess.classList.add('show');
+        launchCelebration();
+      }, 800);
+    }
   });
 
   // ============================================
