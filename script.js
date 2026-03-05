@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ============================================
   const EMAILJS_SERVICE_ID = 'service_kujjr5m';
   const EMAILJS_TEMPLATE_ID = 'template_u3diugf';    
-  const EMAILJS_PUBLIC_KEY = '2vkwsB75zAf1Az-m1E';
+  const EMAILJS_PUBLIC_KEY = '2vkwsB75zAf1Az-m1';
 
   if (window.emailjs && EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY_HERE') {
     emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
