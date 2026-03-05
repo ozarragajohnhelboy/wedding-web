@@ -680,6 +680,84 @@ a {
   background: var(--warm-white);
 }
 
+/* ============================================
+   ENTOURAGE
+   ============================================ */
+.entourage-section {
+  background: var(--cream);
+}
+
+.entourage-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px 32px 36px;
+  box-shadow: 0 10px 40px var(--shadow-dark);
+  border: 1px solid rgba(218, 165, 32, 0.18);
+}
+
+.entourage-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+}
+
+.entourage-bottom {
+  margin-top: 32px;
+}
+
+.entourage-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.entourage-group h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--dark-gold);
+  margin-bottom: 6px;
+}
+
+.entourage-group h4 {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 2px;
+}
+
+.entourage-group p {
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  color: var(--text-body);
+  line-height: 1.5;
+}
+
+.entourage-group.small {
+  margin-top: 6px;
+}
+
+.entourage-two-col {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.entourage-three-col {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.entourage-divider {
+  height: 1px;
+  margin: 28px 0;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
 .timeline {
   position: relative;
   max-width: 700px;
@@ -1859,6 +1937,19 @@ a {
 
   .timeline-dot {
     left: 20px;
+  }
+
+  .entourage-card {
+    padding: 32px 20px 28px;
+  }
+
+  .entourage-grid,
+  .entourage-three-col {
+    grid-template-columns: 1fr;
+  }
+
+  .entourage-two-col {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
