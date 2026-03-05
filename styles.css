@@ -681,81 +681,100 @@ a {
 }
 
 /* ============================================
-   ENTOURAGE
+   ENTOURAGE — Elegant Centered Card
    ============================================ */
 .entourage-section {
   background: var(--cream);
 }
 
-.entourage-card {
-  background: #fff;
-  border-radius: 20px;
-  padding: 40px 32px 36px;
-  box-shadow: 0 10px 40px var(--shadow-dark);
-  border: 1px solid rgba(218, 165, 32, 0.18);
+.ent-card {
+  position: relative;
+  max-width: 820px;
+  margin: 0 auto;
+  background: #fffef8;
+  border: 2px solid var(--gold);
+  border-radius: 18px;
+  padding: 56px 48px 48px;
+  box-shadow: 0 8px 48px rgba(218, 165, 32, 0.10);
+  text-align: center;
+  overflow: hidden;
 }
 
-.entourage-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 32px;
+.ent-corner {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  border-color: var(--dark-gold);
+  border-style: solid;
+  opacity: 0.4;
+}
+.ent-tl { top: 12px; left: 12px; border-width: 2px 0 0 2px; border-radius: 8px 0 0 0; }
+.ent-tr { top: 12px; right: 12px; border-width: 2px 2px 0 0; border-radius: 0 8px 0 0; }
+.ent-bl { bottom: 12px; left: 12px; border-width: 0 0 2px 2px; border-radius: 0 0 0 8px; }
+.ent-br { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; border-radius: 0 0 8px 0; }
+
+.ent-sep {
+  width: 60%;
+  max-width: 320px;
+  height: 1px;
+  margin: 28px auto;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
 }
 
-.entourage-bottom {
-  margin-top: 32px;
-}
-
-.entourage-column {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.entourage-group h3 {
+.ent-heading-lg {
   font-family: var(--font-display);
-  font-size: 1.3rem;
+  font-size: 1.35rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--dark-gold);
+  margin-bottom: 18px;
+}
+
+.ent-heading {
+  font-family: var(--font-display);
+  font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 3px;
   color: var(--dark-gold);
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
-.entourage-group h4 {
+.ent-sub {
   font-family: var(--font-sans);
-  font-size: 0.8rem;
-  letter-spacing: 2px;
+  font-size: 0.78rem;
+  letter-spacing: 2.5px;
   text-transform: uppercase;
   color: var(--gold);
-  margin-bottom: 2px;
+  margin-bottom: 6px;
+  font-weight: 600;
 }
 
-.entourage-group p {
+.ent-block p {
   font-family: var(--font-body);
-  font-size: 0.98rem;
+  font-size: 0.96rem;
   color: var(--text-body);
-  line-height: 1.5;
+  line-height: 1.7;
+  margin: 0;
 }
 
-.entourage-group.small {
-  margin-top: 6px;
+.ent-section {
+  text-align: center;
 }
 
-.entourage-two-col {
+.ent-row {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 48px;
+  align-items: start;
 }
 
-.entourage-three-col {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
+.ent-row-3 {
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px 32px;
 }
 
-.entourage-divider {
-  height: 1px;
-  margin: 28px 0;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+.ent-block {
+  text-align: center;
 }
 
 .timeline {
@@ -1939,17 +1958,14 @@ a {
     left: 20px;
   }
 
-  .entourage-card {
-    padding: 32px 20px 28px;
+  .ent-card {
+    padding: 36px 20px 32px;
   }
 
-  .entourage-grid,
-  .entourage-three-col {
+  .ent-row,
+  .ent-row-3 {
     grid-template-columns: 1fr;
-  }
-
-  .entourage-two-col {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
   }
 }
 
@@ -2009,6 +2025,21 @@ a {
 
   .sunflower-border {
     display: none;
+  }
+
+  .ent-card {
+    padding: 32px 16px 28px;
+    border-radius: 12px;
+  }
+
+  .ent-heading-lg {
+    font-size: 1.15rem;
+    letter-spacing: 3px;
+  }
+
+  .ent-corner {
+    width: 32px;
+    height: 32px;
   }
 
   .gallery-grid {
