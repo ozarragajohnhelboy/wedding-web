@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // EMAILJS CONFIG (fill these from your EmailJS dashboard)
   // ============================================
   const EMAILJS_SERVICE_ID = 'service_kujjr5m';
-  const EMAILJS_TEMPLATE_ID = 'template_u3diugf';       // palitan sa actual template ID mo
-  const EMAILJS_PUBLIC_KEY = '2vkwsB75zAf1Az-m1E'; // palitan sa EmailJS public key mo
+  const EMAILJS_TEMPLATE_ID = 'template_u3diugf';    
+  const EMAILJS_PUBLIC_KEY = '2vkwsB75zAf1Az-m1E';
 
   if (window.emailjs && EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY_HERE') {
     emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
@@ -379,6 +379,26 @@ document.addEventListener('DOMContentLoaded', () => {
         e.stopPropagation();
         closeLightbox();
       });
+    });
+  });
+
+  // ============================================
+  // FAQ ACCORDION
+  // ============================================
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+
+      document.querySelectorAll('.faq-item.open').forEach(openItem => {
+        openItem.classList.remove('open');
+        openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
     });
   });
 
