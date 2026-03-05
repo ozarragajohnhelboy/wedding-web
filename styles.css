@@ -1696,6 +1696,118 @@ a {
 }
 
 /* ============================================
+   TOAST / CUSTOM ALERT MODAL
+   ============================================ */
+.toast-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 20000;
+  background: rgba(62, 39, 35, 0.6);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.toast-overlay.show {
+  opacity: 1;
+}
+
+.toast-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 48px 40px 36px;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(218, 165, 32, 0.2);
+  transform: scale(0.85) translateY(20px);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.toast-overlay.show .toast-card {
+  transform: scale(1) translateY(0);
+}
+
+.toast-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+}
+
+.toast-card.success::before {
+  background: linear-gradient(90deg, var(--sunflower), var(--gold), var(--amber));
+}
+
+.toast-card.error::before {
+  background: linear-gradient(90deg, #e57373, #ef5350, #e57373);
+}
+
+.toast-icon {
+  margin-bottom: 20px;
+  animation: toastIconPop 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.3s both;
+}
+
+@keyframes toastIconPop {
+  0% { transform: scale(0) rotate(-20deg); opacity: 0; }
+  60% { transform: scale(1.15) rotate(5deg); }
+  100% { transform: scale(1) rotate(0); opacity: 1; }
+}
+
+.toast-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.toast-msg {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--text-light);
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.toast-btn {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--brown-dark);
+  background: linear-gradient(135deg, var(--sunflower), var(--gold));
+  border: none;
+  padding: 14px 40px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.toast-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(218, 165, 32, 0.5);
+}
+
+.toast-card.error .toast-btn {
+  background: linear-gradient(135deg, #ef5350, #e57373);
+  color: #fff;
+}
+
+.toast-card.error .toast-btn:hover {
+  box-shadow: 0 6px 20px rgba(229, 115, 115, 0.5);
+}
+
+/* ============================================
    SCROLL ANIMATIONS
    ============================================ */
 .animate-on-scroll {

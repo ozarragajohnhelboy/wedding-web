@@ -165,6 +165,32 @@ document.addEventListener('DOMContentLoaded', () => {
   const rsvpForm = document.getElementById('rsvpForm');
   const rsvpSuccess = document.getElementById('rsvpSuccess');
 
+  function showToast(type, title, msg) {
+    const existing = document.querySelector('.toast-overlay');
+    if (existing) existing.remove();
+
+    const overlay = document.createElement('div');
+    overlay.className = 'toast-overlay';
+
+    const iconSvg = type === 'success'
+      ? '<svg viewBox="0 0 100 100" width="70" height="70"><g transform="translate(50,50)"><g><ellipse cx="0" cy="-22" rx="6" ry="14" fill="#DAA520" transform="rotate(0)"/><ellipse cx="0" cy="-22" rx="6" ry="14" fill="#E6B422" transform="rotate(30)"/><ellipse cx="0" cy="-22" rx="6" ry="14" fill="#DAA520" transform="rotate(60)"/><ellipse cx="0" cy="-22" rx="6" ry="14" fill="#E6B422" transform="rotate(90)"/><ellipse cx="0" cy="-22" rx="6" ry="14" fill="#DAA520" transform="rotate(120)"/><ellipse cx="0" cy="-22" rx="6" ry="14" fill="#E6B422" transform="rotate(150)"/><ellipse cx="0" cy="-22" rx="6" ry="14" fill="#DAA520" transform="rotate(180)"/><ellipse cx="0" cy="-22" rx="6" ry="14" fill="#E6B422" transform="rotate(210)"/><ellipse cx="0" cy="-22" rx="6" ry="14" fill="#DAA520" transform="rotate(240)"/><ellipse cx="0" cy="-22" rx="6" ry="14" fill="#E6B422" transform="rotate(270)"/><ellipse cx="0" cy="-22" rx="6" ry="14" fill="#DAA520" transform="rotate(300)"/><ellipse cx="0" cy="-22" rx="6" ry="14" fill="#E6B422" transform="rotate(330)"/></g><circle cx="0" cy="0" r="15" fill="#5D4037"/><path d="M-6 0 L-2 5 L8 -5" stroke="#FFC107" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg>'
+      : '<svg viewBox="0 0 24 24" width="56" height="56" fill="none" stroke="#DAA520" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>';
+
+    overlay.innerHTML = `
+      <div class="toast-card ${type}">
+        <div class="toast-icon">${iconSvg}</div>
+        <h3 class="toast-title">${title}</h3>
+        <p class="toast-msg">${msg}</p>
+        <button class="toast-btn" onclick="this.closest('.toast-overlay').remove()">
+          ${type === 'success' ? 'Wonderful!' : 'Try Again'}
+        </button>
+      </div>
+    `;
+
+    document.body.appendChild(overlay);
+    requestAnimationFrame(() => overlay.classList.add('show'));
+  }
+
   rsvpForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -172,33 +198,26 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.innerHTML = '<span>Sending...</span>';
     btn.disabled = true;
 
-    const formData = new FormData(rsvpForm);
-    const templateParams = {
-      guest_name: formData.get('guestName'),
-      email: formData.get('guestEmail'),
-      attendance: formData.get('attendance'),
-      guests: formData.get('guests'),
-      message: formData.get('message') || '',
-    };
-
     if (window.emailjs && EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY_HERE') {
       emailjs
-        .send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+        .sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, rsvpForm)
         .then(() => {
           rsvpForm.style.display = 'none';
           rsvpSuccess.classList.add('show');
+          showToast('success', 'RSVP Sent!', 'Thank you for responding. We can\'t wait to celebrate with you!');
           launchCelebration();
         })
-        .catch(() => {
+        .catch((err) => {
           btn.innerHTML = '<span>Send RSVP</span>';
           btn.disabled = false;
-          alert('Sorry, something went wrong sending your RSVP. Please try again.');
+          console.error('EmailJS error:', err);
+          showToast('error', 'Oops!', 'Something went wrong sending your RSVP. Please check your connection and try again.');
         });
     } else {
-      // fallback: walang configured EmailJS, behave like demo
       setTimeout(() => {
         rsvpForm.style.display = 'none';
         rsvpSuccess.classList.add('show');
+        showToast('success', 'RSVP Sent!', 'Thank you for responding. We can\'t wait to celebrate with you!');
         launchCelebration();
       }, 800);
     }
