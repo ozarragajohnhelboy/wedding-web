@@ -434,4 +434,29 @@ document.addEventListener('DOMContentLoaded', () => {
     document.head.appendChild(style);
   }
 
+  // ============================================
+  // BACKGROUND MUSIC AUTOPLAY (LOOP)
+  // ============================================
+  const bgMusic = document.getElementById('bgMusic');
+  if (bgMusic) {
+    bgMusic.volume = 0.5;
+    const tryPlay = () => {
+      bgMusic.play().catch(() => {
+        // If blocked by browser, try again on first user interaction
+        const once = () => {
+          bgMusic.play().catch(() => {});
+          window.removeEventListener('click', once);
+          window.removeEventListener('scroll', once);
+          window.removeEventListener('touchstart', once);
+          window.removeEventListener('keydown', once);
+        };
+        window.addEventListener('click', once, { once: true });
+        window.addEventListener('scroll', once, { once: true });
+        window.addEventListener('touchstart', once, { once: true });
+        window.addEventListener('keydown', once, { once: true });
+      });
+    };
+    tryPlay();
+  }
+
 });

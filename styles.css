@@ -777,6 +777,8 @@ a {
   text-align: center;
 }
 
+/* (background music now auto-plays, no visible toggle) */
+
 .timeline {
   position: relative;
   max-width: 700px;
